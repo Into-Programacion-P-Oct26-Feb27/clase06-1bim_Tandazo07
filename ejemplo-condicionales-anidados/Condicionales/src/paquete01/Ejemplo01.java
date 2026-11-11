@@ -44,3 +44,6 @@ public class Ejemplo01 {
     }
 
 }
+/*
+El usuario debe ingresar la opcion 1 "Asi va a ejecutarse el trabajar con AND"
+*/
