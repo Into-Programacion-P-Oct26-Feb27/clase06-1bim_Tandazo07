@@ -12,66 +12,65 @@ import java.util.Scanner;
  * @author reroes
  */
 public class Comercio02 {
-    
+
     public static void main(String[] args) {
-        
+
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US); // 10,2 / 10.2
-        
+
         String nombre;
         String apellido;
         int edad;
         double sueldoBasico;
         int numeroProductos;
-        
+
         double productividad;
         double coeficiente = 0.6;
-        double bono  = 0;
-        
+        double bono = 0;
+
         double porcentajeSeguro = 8;
         double adicionalSeguro;
-        
-        double sueldoFinal; 
-        
+
+        double sueldoFinal;
+
         System.out.println("Ingrese el nombre por favor");
         nombre = entrada.nextLine();
-        
+
         System.out.println("Ingrese el apellido por favor");
         apellido = entrada.nextLine();
-        
+
         System.out.println("Ingrese la edad por favor");
         edad = entrada.nextInt();
 
         System.out.println("Ingrese el sueldo básico por favor");
-        sueldoBasico = entrada.nextDouble();        
-        
+        sueldoBasico = entrada.nextDouble();
+
         System.out.println("Ingrese el número de productos vendidos "
                 + "por favor");
         numeroProductos = entrada.nextInt();
-        
+
         // calcular la productividad
         productividad = numeroProductos * coeficiente;
-        
-        if (productividad<=30){
+
+        if (productividad <= 30) {
             bono = 25; // $25
-        }else{
-            if (productividad>30 && productividad<80){
+        } else {
+            if (productividad > 30 && productividad < 80) {
                 bono = 50;
-            }else{
-                if (productividad>=80 && productividad < 200) {
+            } else {
+                if (productividad >= 80 && productividad < 200) {
                     bono = 100;
-                }else{
-                    if(productividad >= 200){
+                } else {
+                    if (productividad >= 200) {
                         bono = 200;
                     }
                 }
             }
         }
-        
-       
-        adicionalSeguro = (sueldoBasico * porcentajeSeguro)/100;
+
+        adicionalSeguro = (sueldoBasico * porcentajeSeguro) / 100;
         sueldoFinal = adicionalSeguro + bono + sueldoBasico;
-        
+
         System.out.printf("Reporte de Empleado EL GRAN COMERCIO\n\n"
                 + "Nombres: %s\n"
                 + "Apellidos: %s\n"
@@ -81,8 +80,8 @@ public class Comercio02 {
                 + "\tProductidad: %.2f\n"
                 + "\tBono: $%.2f\n"
                 + "Adicional del seguro: $%.2f\n\n"
-                + "Sueldo final: $%.2f\n", 
-                nombre, 
+                + "Sueldo final: $%.2f\n",
+                nombre,
                 apellido,
                 edad,
                 sueldoBasico,
@@ -91,8 +90,7 @@ public class Comercio02 {
                 bono,
                 adicionalSeguro,
                 sueldoFinal);
-        
-        
+
     }
-    
+
 }
